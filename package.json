@@ -1,0 +1,26 @@
+{
+  "name": "conf-share-js",
+  "version": "1.0.1",
+  "description": "微信分享",
+  "main": "index.js",
+  "scripts": {
+    "transfer": "babel ./es6/index.js -o lib/index.js",
+    "uglify": "uglifyjs ./lib/index.js -o ./lib/index.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sammffl/wechat-share-js.git"
+  },
+  "author": "Sam.Shen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sammffl/wechat-share-js/issues"
+  },
+  "homepage": "https://github.com/sammffl/wechat-share-js#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "uglify-js": "^3.3.9"
+  }
+}
