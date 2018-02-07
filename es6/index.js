@@ -6,7 +6,9 @@ let wechatShareTitle,
     wechatShareDesc,
     wechatShareLink,
     wechatShareImgurl,
-    debug;
+    debug,
+    callback,
+    apiDomain;
 
 function ajax(params) {
 
@@ -116,6 +118,8 @@ function ajax(params) {
 
 export default class WechatShare {
     constructor(props, isDebug = false) {
+        callback = props.callback;
+        apiDomain = props.apiDomain || location.origin;
         debug = isDebug;
         const self = this;
         let script = document.createElement('script');
@@ -146,7 +150,7 @@ export default class WechatShare {
         const self = this;
         ajax({
             type: 'GET',
-            url: `${location.origin}/api/wechat/jsapi/signature`,
+            url: `${apiDomain}/api/wechat/jsapi/signature`,
             data: {
                 url: window.location.href,
             },
@@ -256,6 +260,7 @@ export default class WechatShare {
 
             });
 
+            !!callback && callback();
         });
     }
 }

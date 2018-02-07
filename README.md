@@ -16,5 +16,7 @@ new wxInit({
     desc: '分享内容',
     link: '分享链接',
     imgUrl: '分享图片',
+    callback: ()=>{},
+    apiDomain: '',
 }, true);
 ```
